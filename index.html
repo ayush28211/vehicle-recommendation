@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoAdvisor - Vehicle Recommendation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Vehicle Recommendation AI</h1>
+            <p>Get personalized vehicle recommendations based on your needs</p>
+        </header>
+
+        <main>
+            <form id="vehicleForm">
+                <div class="form-group">
+                    <label for="budget">Budget Range:</label>
+                    <select id="budget" required>
+                        <option value="">Select your budget</option>
+                        <option value="under $10,000">Under $10,000</option>
+                        <option value="$10,000 - $20,000">$10,000 - $20,000</option>
+                        <option value="$20,000 - $30,000">$20,000 - $30,000</option>
+                        <option value="$30,000 - $50,000">$30,000 - $70,000</option>
+                        <option value="over $50,000">Over $70,000</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="mileage">Preferred Mileage</label>
+                    <select id="mileage" required>
+                        <option value="">Select preferred mileage</option>
+                        <option value="20-30 MPG">5-10 MPG</option>
+                        <option value="20-30 MPG">10-20 MPG</option>
+                        <option value="40+ MPG">20+ MPG</option>
+                        <option value="electric">Electric</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="brand">Preferred Brand (optional):</label>
+                    <input type="text" id="brand" placeholder="e.g., Toyota, Ford, Tesla">
+                </div>
+
+                <div class="form-group">
+                    <label for="type">Vehicle Type:</label>
+                    <select id="type" required>
+                        <option value="">Select vehicle type</option>
+                        <option value="sedan">Sedan</option>
+                        <option value="SUV">SUV</option>
+                        <option value="truck">Truck</option>
+                        <option value="hatchback">Hatchback</option>
+                        <option value="minivan">Minivan</option>
+                        <option value="sports car">Sports Car</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="additional">Additional Needs (optional):</label>
+                    <textarea id="additional" rows="3" placeholder="e.g., good for families, off-road capability, luxury features"></textarea>
+                </div>
+
+                <button type="submit" id="recommendBtn">Get Recommendations</button>
+            </form>
+
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Finding your perfect vehicle...</p>
+            </div>
+
+            <div id="recommendations" class="hidden">
+                <h2>Your Recommended Vehicles</h2>
+                <div id="results"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
